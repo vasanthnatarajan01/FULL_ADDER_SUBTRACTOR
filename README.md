@@ -36,20 +36,77 @@ Diff = A ⊕ B ⊕ Bin
 
 Borrow out = A'Bin + A'B + BBin
 
+![Screenshot 2024-11-26 101928](https://github.com/user-attachments/assets/a45cb19c-f5e7-40f7-b0d7-2dabaeaa3e13)
+
+
 **Truthtable**
+
+![Screenshot 2024-11-26 102020](https://github.com/user-attachments/assets/51d7dc16-a22e-455b-9166-ba6777d7ac20)
+
 
 **Procedure**
 
-Write the detailed procedure here
+1.Type the program in qartus software.     
+2.Compile and run the program.    
+3.Generate the RTL schematic and save the logic diagram.             
+4.Create nodes for inputs and outputs to generate the timing diagram.       
+5.For different input combination generate the timimg diagram.    
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+
+    module ex4(sum,cout,a,b,cin);
+    output sum;
+    output cout;   
+    input a;   
+    input b;   
+    input cin;  
+    wire s1,c1,c2;   
+    xor(s1,a,b);
+    and(c2,s1,cin);     
+    or(cout,c2,c1);   
+    endmodule   
+    
+    module exp4a(df, bo, a, b, bin);   
+    output df;     
+    output bo;    
+    input a;    
+    input b;    
+    input bin;    
+    wire w1,w2,w3 ;     
+    assign w1-a^b;    
+    assign w2=(-a&b);    
+    assign w3=(-w1&bin);     
+    assign df-w1 bin;      
+    assign bo-w2/w3;    
+    endmodule    
+    
+Developed by: Vasanth N   
+RegisterNumber: 24000697
 */
 
-**RTL Schematic**
+**RTL Schematic  FULL-ADDER**
 
-**Output Timing Waveform**
+![Screenshot 2024-11-26 102132](https://github.com/user-attachments/assets/5a590aa0-b5cd-4bb5-b8ee-8afad684c328)
+
+
+
+**FULL-SUBTRACTOR**
+
+
+![Screenshot 2024-11-26 102227](https://github.com/user-attachments/assets/e09a70aa-d702-4dec-a523-4ece78716f5b)
+
+
+**Output Timing Waveform FULL-ADDER**
+
+![Screenshot 2024-11-26 102304](https://github.com/user-attachments/assets/ccd50e65-945f-4fc5-82b7-5bb3b9f88a08)
+
+
+**FULL-SUBTRACTOR**
+
+![Screenshot 2024-11-26 102440](https://github.com/user-attachments/assets/5c617246-beb0-4bc4-a0a2-a94f8c00f364)
+
 
 **Result:**
 
